@@ -1,7 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿//invoking/calling 
+using System.Runtime.CompilerServices;
 
-//invoking/calling 
 Main();
 
 void Main()
@@ -23,6 +22,7 @@ CanadaQuestion();
 EnthusiasticQuestion();
 LoveCSharpQuestion();
 SecretQuestion();
+//  MooseResponse();
 }
 
 
@@ -81,17 +81,19 @@ void SecretQuestion()
 }
 
 //bool meaning boolean (the (Y/N))
-//Mooseasks is the proposed string question above
+//MooseAsks is the proposed string question above
 //(string question) defines the text being printed as a string. Let/const is NOT used in C# 
 bool MooseAsks(string question)
 {
-  //string interpolation for the proposed question with (Y/N) being one of the answers
+  //string interpolation for the proposed question with (Y/N) being one of the answer
     Console.Write($"{question} (Y/N): ");
 
     //string is used instead of let in C# (shows that the answer will be a string)
     string answer = Console.ReadLine().ToLower();
 
-    while (answer != "y" && answer != "n")
+    //while loop = loop will run until it gets a response
+
+    while (answer != "y" && answer != "n") //if answer is != (not) y or no, the loop will keep running until y or n is entered (cannot be 1, yes, no, I don't know, etc.)
     {
         Console.Write($"{question} (Y/N): ");
         answer = Console.ReadLine().ToLower();
@@ -142,3 +144,16 @@ void MooseSays(string message)
                        `^^` `^^^`
     ");
 }
+
+//if question comes back as true, give a yes answer
+//if question comes back as false, give a no answer
+
+//Re-factored code to work on later
+// void MooseResponse( string question, string yesAnswer, string noAnswer) //We're looking for 3 strings upon execution
+// {
+//     bool isQuestionTrue = MooseAsks(question);
+
+//     string answer = isQuestionTrue ? yesAnswer : noAnswer;
+
+//     MooseSays(answer);
+// }
